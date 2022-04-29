@@ -1,5 +1,7 @@
 import Component from "../Component.js";
+import { changeRoute } from "../Router.js";
 import { parseToNodeTree } from "../toolkit.js";
+
 
 export default class Button extends Component {
   props = {
@@ -19,6 +21,7 @@ export default class Button extends Component {
       },
       {
         component: "button",
+        properties: [{ "data-route": "/test"}]
       },
     ];
     parseToNodeTree(template).forEach((element) => {
@@ -41,11 +44,14 @@ export default class Button extends Component {
 
   binding() {
     // console.log(this.container.querySelector("[data-name='counter']"));
-    const increment = () => {
-      this.props.counter++;
-      this.container.querySelector("[data-name='counter']").innerText =
-        this.props.counter;
-    };
-    this.container.querySelector("button").addEventListener("click", increment);
+    // const increment = () => {
+    //   this.props.counter++;
+    //   this.container.querySelector("[data-name='counter']").innerText =
+    //     this.props.counter;
+    // };
+    const redirectTo = () => {
+      changeRoute("/test")
+    }
+    this.container.querySelector("button").addEventListener("click", redirectTo);
   }
 }

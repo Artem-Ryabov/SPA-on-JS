@@ -14,6 +14,6 @@ export default class Component {
   }
   
   derender() {
-    this.document.body.remove(this.container);
+    this.container.remove();
   }
 }

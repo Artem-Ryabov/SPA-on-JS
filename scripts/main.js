@@ -1,9 +1,8 @@
 import ApiService from "./ApiService.js";
-import Header from "./components/Header.js";
+import { changeRoute } from "./Router.js";
 
-const service = new ApiService();
-const header = new Header(document, service);
-header.render();
+// const header = new Header(document, service);
+// header.render();
 
 // const div = document.createElement("div");
 // const span = document.createElement("span");
@@ -52,4 +51,5 @@ header.render();
 // test.forEach((e) => {
 //   console.log(!!e);
 // })
+
 
