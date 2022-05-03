@@ -1,4 +1,4 @@
-import Component from "../Component.js";
+import Component from "../classes/Component.js";
 import { parseToNodeTree } from "../toolkit.js";
 import Button from "./Button.js";
 

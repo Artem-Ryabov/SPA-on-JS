@@ -1,4 +1,4 @@
-import Component from "../Component.js";
+import Component from "../classes/Component.js";
 import { changeRoute } from "../Router.js";
 import { parseToNodeTree } from "../toolkit.js";
 

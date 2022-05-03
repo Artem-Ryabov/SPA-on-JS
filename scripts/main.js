@@ -1,5 +1,5 @@
-import ApiService from "./ApiService.js";
-import { changeRoute } from "./Router.js";
+import * as Imports from "./imports.js"
+
 
 // const header = new Header(document, service);
 // header.render();
@@ -9,7 +9,6 @@ import { changeRoute } from "./Router.js";
 // span.innerText = "TESTING";
 // div.append(span);
 // document.querySelector("body").setAttribute("sdfsdf", 2)
-
 
 // let tree = {
 //   component: "form",
@@ -51,5 +50,3 @@ import { changeRoute } from "./Router.js";
 // test.forEach((e) => {
 //   console.log(!!e);
 // })
-
-
