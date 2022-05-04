@@ -1,4 +1,4 @@
-export default class ApiService {
+class ApiService {
   #uri = "https://jsonplaceholder.typicode.com/";
 
   constructor() {}
@@ -9,3 +9,7 @@ export default class ApiService {
     return album.slice(0, 50);
   }
 }
+
+const apiService = new ApiService();
+
+export default apiService;
