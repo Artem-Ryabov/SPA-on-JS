@@ -1,14 +1,19 @@
-import _Component from "../classes/_Component.js";
+import Component from "../classes/Component.js";
 
-export default class Footer extends _Component {
+export default class Footer extends Component {
   constructor() {
     super();
 
     const template = `
-      <div>
-        <span>${this.getAttribute("name")}</span>
-        <p>This is a ${this.getAttribute("name")}</p>
+      <div class="footer">
+        <span>This is a footer</span>
+        <p>help me help me help me help me help me help me help me help me help me help me help me help me help me</p>
       </div>
+      <style>
+        @import '../../styles/reset.css';
+        @import '../../styles/utilities.css';
+        @import '../../styles/components.css';
+      </style>
     `;
 
     this.init(template);

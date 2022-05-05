@@ -1,37 +1,26 @@
 import Component from "../classes/Component.js";
-import { parseToNodeTree } from "../toolkit.js";
-import Button from "./Button.js";
 
 export default class Header extends Component {
-  apiService;
-  constructor(document, apiService) {
-    super(document, "js-header");
-    this.apiService = apiService;
-    this.init();
-  }
-  init() {
-    const template = [
-      {
-        component: "header",
-        text: "tasdfkajsdkfljaklsdfjas;kld4fj",
-        classes: "bruh bruh_hhh",
-        children: [
-          {
-            component: "span",
-            properties: [{"id": "55"}]
-          },
-        ],
-      },
-    ];
-    parseToNodeTree(template).forEach((element) => {
-      this.container.append(element);
-    });
-    const button = new Button(this.document);
-    this.container.append(button.container);
-    this.binding();
-  }
-  binding() {
-    this.apiService.getAlbum().then((res) => console.log(res))
-    // console.log(this.apiService.getAlbum());
+  constructor() {
+    super();
+
+    const template = `
+      <div class="flex header">
+        <div class="flex title">
+          <img class="title__logo" src="../../assets/icons/diaphragm.png" alt="logo" />
+          <span class="title__text">Common name for an app</span>
+        </div>
+        <span>This is a header</span>
+      </div>
+      <style>
+        @import '../../styles/reset.css';
+        @import '../../styles/utilities.css';
+        @import '../../styles/components.css';
+      </style>
+    `;
+
+    this.init(template);
   }
 }
+
+customElements.define("js-header", Header);

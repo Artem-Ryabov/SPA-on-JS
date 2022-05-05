@@ -1,0 +1,33 @@
+.flex {
+    --direction: row;
+    --justify-content: space-between;
+    --align-items: center;
+    display: flex;
+    flex-flow: var(--direction) nowrap;
+    justify-content: var(--justify-content);
+    align-items: var(--align-items);
+}
+
+.flex-v {
+    --direction: column;
+}
+
+.flex-align-str {
+    --align-items: stretch;
+}
+
+.flex-sp-a {
+    --justify-content: space-around;
+}
+
+.flex-center {
+    --justify-content: center;
+}
+
+.flex-start {
+    --justify-content: flex-start;
+}
+
+.flex-end {
+    --justify-content: flex-end;
+}

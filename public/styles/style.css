@@ -1,3 +1,15 @@
-.highlight {
-    color: red;
+@import "reset.css";
+@import "colors.css";
+@import "utilities.css";
+@import "components.css";
+
+html {
+    font-size: 20px;
+}
+
+#root {
+    height: 100vh;
+    padding-inline: 10rem;
+    background-color: var(--base-color);
+    color: var(--second-color);
 }

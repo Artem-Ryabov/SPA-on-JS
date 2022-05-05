@@ -1,0 +1,11 @@
+.light-theme {
+    --base-color: #f3f3f3;
+    --second-color: #172d50;
+    --accent-color: #e0810f;
+}
+
+.dark-theme {
+    --base-color: #1a1a1a;
+    --second-color: #d4d8dc;
+    --accent-color: #e0810f;
+}

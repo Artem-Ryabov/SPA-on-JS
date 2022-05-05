@@ -14,7 +14,7 @@ app.get("*", (req, res) => {
 
 start();
 
-async function start() {
+function start() {
   try {
     app.listen(port, () => console.log("Back-end app starts at port:" + port));
   } catch (e) {

@@ -1,19 +1,16 @@
-export default class Component {
-  container;
-  document;
-
-  constructor(document, name) {
-    this.document = document;
-    this.container = document.createElement(name);
+export default class Component extends HTMLElement {
+  constructor() {
+    super();
+    this.attachShadow({mode: "open"});
   }
 
-  init() {}
+  init(template) {
+    this.shadowRoot.innerHTML = template;
+  }
 
-  render() {
-    this.document.body.append(this.container);
-  }
-  
-  derender() {
-    this.container.remove();
-  }
+  connectedCallback() {}
+
+  disconnectedCallback() {}
+
+  attributeChangedCallback(name, oldValue, newValue) {}
 }

@@ -1,0 +1,13 @@
+{
+  "name": "spa on js",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "nodemon -e js,css,html,json index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}

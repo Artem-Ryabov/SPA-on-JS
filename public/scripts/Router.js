@@ -18,15 +18,9 @@ export function changeRoute(route) {
 }
 
 function routeHandler(route) {
-  const path = window.location.pathname;
-  console.log(path, route);
-  const newRoute = routes[path] || route[404];
+  const newRoute = routes[route] || routes[404];
   document.querySelector("#router").innerHTML = newRoute;
 }
-//
-// changeRoute("/");
-//
-//
-// // window.history.pushState({}, "", "/");
-// window.onpopstate = routeHandler;
-// window.route = route;
+
+changeRoute("/");
+window.onpopstate = routeHandler;
