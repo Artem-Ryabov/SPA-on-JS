@@ -7,7 +7,7 @@ export default class ImageInfo extends Component {
     const template = `
       <span>Image info</span>
       <style>
-        @import '../../styles/reset.css';
+        @import "../../styles/reset.css";
       </style>
     `;
 

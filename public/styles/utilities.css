@@ -6,10 +6,15 @@
     flex-flow: var(--direction) nowrap;
     justify-content: var(--justify-content);
     align-items: var(--align-items);
+    align-content: space-evenly;
 }
 
 .flex-v {
     --direction: column;
+}
+
+.flex-wr {
+    flex-flow: var(--direction) wrap;
 }
 
 .flex-align-str {
@@ -30,4 +35,12 @@
 
 .flex-end {
     --justify-content: flex-end;
+}
+
+.container-p-in {
+    padding-inline: 10rem;
+}
+
+.container-p-bl {
+    padding-block: 1rem;
 }

@@ -2,14 +2,27 @@
 @import "colors.css";
 @import "utilities.css";
 @import "components.css";
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@600&family=Koulen&display=swap");
 
 html {
     font-size: 20px;
+    font-family: 'Kanit', sans-serif;
 }
 
 #root {
     height: 100vh;
-    padding-inline: 10rem;
+    background-color: var(--second-color);
+    color: var(--font-color);
+    overflow: hidden auto;
+}
+
+#root::-webkit-scrollbar {
+    background-color: var(--third-color);
+    width: 0.8rem;
+    border-radius: 100vw;
+}
+
+#root::-webkit-scrollbar-thumb {
     background-color: var(--base-color);
-    color: var(--second-color);
+    border-radius: 100vw;
 }

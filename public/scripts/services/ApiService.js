@@ -1,4 +1,4 @@
-import { uri } from "../constants/config.json";
+import config from "../constants/config.js";
 
 class ApiService {
   #uri;
@@ -14,6 +14,6 @@ class ApiService {
   }
 }
 
-const apiService = new ApiService(uri);
+const apiService = new ApiService(config.uri);
 
 export default apiService;

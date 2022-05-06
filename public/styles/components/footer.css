@@ -1,0 +1,10 @@
+.footer {
+    --align-items: flex-end;
+    padding-block: 0.8rem;
+    background-color: var(--base-color);
+}
+
+.footer span {
+    display: block;
+    margin-block: 0.8rem;
+}

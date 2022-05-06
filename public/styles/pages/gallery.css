@@ -1,0 +1,5 @@
+.card-list {
+    gap: 1rem;
+    width: fit-content;
+    margin-inline: auto;
+}

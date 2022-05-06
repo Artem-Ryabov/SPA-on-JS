@@ -5,14 +5,14 @@ export default class Footer extends Component {
     super();
 
     const template = `
-      <div class="footer">
-        <span>This is a footer</span>
-        <p>help me help me help me help me help me help me help me help me help me help me help me help me help me</p>
+      <div class="flex flex-v flex-sp-a footer container-p-in">
+        <span>This website was created by using only JavaScript</span>
+        <span>Created by Ryabov Artem</span>
       </div>
       <style>
-        @import '../../styles/reset.css';
-        @import '../../styles/utilities.css';
-        @import '../../styles/components.css';
+        @import "../../styles/reset.css";
+        @import "../../styles/utilities.css";
+        @import "../../styles/components/footer.css";
       </style>
     `;
 

@@ -5,21 +5,27 @@
 //   window.history.pushState({}, "", event.target.href);
 // }
 
-const routes = {
-  404: `<js-error></js-error>`,
-  "/": `<js-main></js-main>`,
-  "/image-info": `<js-img-info></js-img-info>`,
-};
+import urls, { routes } from "./constants/routes.js";
 
-
-export function changeRoute(route) {
+export default function changeRoute(route) {
   window.history.pushState({}, "", route);
-  routeHandler(route);
+  routeHandler();
 }
 
-function routeHandler(route) {
-  const newRoute = routes[route] || routes[404];
-  document.querySelector("#router").innerHTML = newRoute;
+function routeHandler() {
+  const path = window.location.pathname;
+  let page = routes[urls.error];
+  if (path === urls.main) {
+    page = routes[urls.main];
+  } else {
+    for (const url of Object.keys(routes)) {
+      if (path.includes(url) && url.length > 1) {
+        page = routes[url];
+        break;
+      }
+    }
+  }
+  document.querySelector("#router").innerHTML = page;
 }
 
 changeRoute("/");

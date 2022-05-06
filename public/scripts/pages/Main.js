@@ -1,27 +1,38 @@
 import Component from "../classes/Component.js";
-import { changeRoute } from "../Router.js";
+import urls from "../constants/routes.js";
+import apiService from "../services/ApiService.js";
 
 export default class Main extends Component {
   constructor() {
     super();
 
     const template = `
-      <span>This is a main page</span>
-      <input type="button" value="redirect to" />
+      <div class="flex flex-center container-p-in container-p-bl">
+        <div id="card-list" class="flex flex-wr flex-sp-a card-list"></div>
+      </div>
       <style>
-        @import '../../styles/reset.css';
+        @import "../../styles/reset.css";
+        @import "../../styles/utilities.css";
+        @import "../../styles/pages/gallery.css";
       </style>
     `;
 
     this.init(template);
+    this.bindData();
   }
 
-  redirectTo() {
-    changeRoute("/image-info");
-  }
-
-  connectedCallback() {
-    this.shadowRoot.querySelector("input").addEventListener("click", this.redirectTo);
+  async bindData() {
+    const list = await apiService.getAlbum();
+    const cardList = this.shadowRoot.querySelector("#card-list");
+    list.forEach((photo) => {
+      const card = document.createElement("template");
+      card.innerHTML = `
+        <js-redirect-card path="${urls.imagePage}/${photo.id}">
+          <js-img-card imgurl="${photo.thumbnailUrl}" title="${photo.title}"></js-img-card>
+        </js-redirect-card>
+      `;
+      cardList.append(card.content.cloneNode(true));
+    });
   }
 }
 
