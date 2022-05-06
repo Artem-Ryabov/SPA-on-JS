@@ -5,13 +5,13 @@ export default class ErrorPage extends Component {
     super();
 
     const template = `
-      <div class="flex flex-center">
+      <div class="flex flex-center error">
         <span>Page is not found</span>
       </div>
       <style>
-        @import '../../styles/reset.css';
-        @import '../../styles/utilities.css';
-        @import '../../styles/components.css';
+        @import "../../styles/reset.css";
+        @import "../../styles/utilities.css";
+        @import "../../styles/pages/error.css";
       </style>
     `;
 
