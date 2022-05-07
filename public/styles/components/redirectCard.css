@@ -1,4 +1,4 @@
 #card {
     cursor: pointer;
-    width: min-content;
+    width: fit-content;
 }

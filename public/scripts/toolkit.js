@@ -1,25 +1,14 @@
-export function parseToNodeTree(nodes) {
-  return nodes.map((node) => {
-    const component = document.createElement(node.component);
-    if (!!node.properties) {
-      node.properties.forEach((property) => {
-        const [type] = Object.keys(property);
-        component.setAttribute(type, property[type]);
-      });
-    }
-    if (!!node.classes) {
-      node.classes.split(" ").forEach((element) => {
-        component.classList.toggle(element);
-      });
-    }
-    if (!!node.text) {
-      component.innerText = node.text;
-    }
-    if (!!node.children) {
-      parseToNodeTree(node.children).forEach((child) => {
-        component.append(child);
-      });
-    }
-    return component;
-  });
+export function paramParser(values) {
+  const url = new URL(window.location.host);
+  Object.keys(values).forEach(key => url.searchParams.set(key, values[key]));
+  return url.search;
+}
+
+export function valueParser(location) {
+  const urlSearchParams = (new URL(location)).searchParams;
+  const values = {};
+  for (const param of urlSearchParams.keys()) {
+    values[param] = urlSearchParams.get(param);
+  }
+  return values;
 }

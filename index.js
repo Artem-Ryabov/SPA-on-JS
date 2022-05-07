@@ -8,7 +8,6 @@ app.use(express.json({extended: true}));
 app.use("/", express.static("public"));
 
 app.get("*", (req, res) => {
-
   res.sendFile(path.resolve(__dirname, "public", "index.html"));
 });
 
@@ -16,7 +15,7 @@ start();
 
 function start() {
   try {
-    app.listen(port, () => console.log("Back-end app starts at port:" + port));
+    app.listen(port, () => console.log(`Back-end app starts at port: ${port}`));
   } catch (e) {
     console.log("Error: " + e.message);
     process.exitCode = 1;

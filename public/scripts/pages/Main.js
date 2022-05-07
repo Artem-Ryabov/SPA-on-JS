@@ -1,6 +1,7 @@
 import Component from "../classes/Component.js";
 import urls from "../constants/routes.js";
 import apiService from "../services/ApiService.js";
+import { paramParser } from "../toolkit.js";
 
 export default class Main extends Component {
   constructor() {
@@ -22,12 +23,12 @@ export default class Main extends Component {
   }
 
   async bindData() {
-    const list = await apiService.getAlbum();
+    const list = await apiService.getPhotos();
     const cardList = this.shadowRoot.querySelector("#card-list");
     list.forEach((photo) => {
       const card = document.createElement("template");
       card.innerHTML = `
-        <js-redirect-card path="${urls.imagePage}/${photo.id}">
+        <js-redirect-card path="${urls.imagePage}${paramParser({id: photo.id})}">
           <js-img-card imgurl="${photo.thumbnailUrl}" title="${photo.title}"></js-img-card>
         </js-redirect-card>
       `;

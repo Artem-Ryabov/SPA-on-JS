@@ -1,6 +1,5 @@
 import Component from "../classes/Component.js";
 import changeRoute from "../Router.js";
-import urls from "../constants/routes.js";
 
 export default class RedirectCard extends Component {
   constructor() {

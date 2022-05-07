@@ -1,10 +1,3 @@
-// const route = (event) => {
-//   event = event || window.event;
-//   event.preventDefault();
-//   console.log(event);
-//   window.history.pushState({}, "", event.target.href);
-// }
-
 import urls, { routes } from "./constants/routes.js";
 
 export default function changeRoute(route) {
@@ -28,5 +21,5 @@ function routeHandler() {
   document.querySelector("#router").innerHTML = page;
 }
 
-changeRoute("/");
 window.onpopstate = routeHandler;
+routeHandler();
