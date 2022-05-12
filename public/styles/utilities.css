@@ -44,3 +44,40 @@
 .container-p-bl {
     padding-block: 1rem;
 }
+
+.toggle-button {
+    --width: 3rem;
+    appearance: none;
+    position: relative;
+    vertical-align: top;
+    margin: 0;
+    margin-left: 0.5rem;
+    width: var(--width);
+    height: calc(var(--width) / 2);
+    background: var(--second-color);
+    border-radius: 1rem;
+    outline: none;
+    cursor: pointer;
+}
+.toggle-button::after {
+    --margin: 0.4rem;
+    --diameter: calc(var(--width) / 2 - var(--margin));
+    content: "";
+    position: absolute;
+    left: calc(var(--margin) / 2);
+    top: calc(var(--margin) / 2);
+    width: var(--diameter);
+    height: var(--diameter);
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    transform: translateX(0);
+}
+
+.toggle-button:checked::after {
+    transform: translateX(calc(var(--width) / 2));
+    background-color: var(--base-color);
+}
+
+.toggle-button:checked {
+    background-color: var(--accent-color);
+}

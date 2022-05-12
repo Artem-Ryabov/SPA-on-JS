@@ -6,7 +6,7 @@ export default class Footer extends Component {
 
     const template = `
       <div class="flex flex-v flex-sp-a footer container-p-in">
-        <span>This website was created by using only JavaScript</span>
+        <span>This website was created by using only JavaScript and CSS</span>
         <span>Created by Ryabov Artem</span>
       </div>
       <style>

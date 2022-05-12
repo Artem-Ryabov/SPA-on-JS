@@ -1,0 +1,28 @@
+.photo {
+    --height: 25rem;
+    max-width: 50rem;
+    margin-inline: auto;
+}
+
+.photo img {
+    height: var(--height);
+}
+
+.photo__info {
+    background-color: var(--base-color);
+    --padding: 2rem;
+    padding: var(--padding);
+    height: calc(var(--height) - (var(--padding)) * 2);
+}
+
+.photo__info :is(span,h1,h2) {
+    margin-bottom: 1rem;
+}
+
+.photo__info h1 {
+    font-size: 1.4rem;
+}
+
+.photo__info h2 {
+    font-size: 1.2rem;
+}
